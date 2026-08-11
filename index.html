@@ -39,7 +39,7 @@
     border-bottom:1px solid var(--line);
     background-image:
       linear-gradient(180deg, rgba(51,48,42,.35) 0%, rgba(51,48,42,.55) 55%, rgba(51,48,42,.75) 100%),
-      url('images/foto03.jpg');
+      url('foto03.jpg');
     background-size:cover;
     background-position:center 30%;
     color:#fff;
@@ -117,16 +117,11 @@
 </header>
 
 <nav class="jump">
-  <a href="#storie">Ons storie</a>
   <a href="#herinnering">Herinnering</a>
-  <a href="#kiekies">Kiekies</a>
   <a href="#wenslys">Wenslys</a>
+  <a href="#storie">Ons storie</a>
+  <a href="#kiekies">Kiekies</a>
 </nav>
-
-<section id="storie">
-  <div class="section-head"><div class="eyebrow">Die tydlyn</div><h2>Ons storie tot dusver</h2></div>
-  <div id="timeline"></div>
-</section>
 
 <section id="herinnering">
   <div class="section-head">
@@ -143,11 +138,6 @@
   </div>
 </section>
 
-<section id="kiekies">
-  <div class="section-head"><div class="eyebrow">Al die kiekies</div><h2>Kiekies</h2></div>
-  <div class="gallery" id="gallery-grid"></div>
-</section>
-
 <section id="wenslys">
   <div class="section-head">
     <div class="eyebrow">Nog te doen</div>
@@ -155,6 +145,16 @@
     <p class="sub">'n Klein konsep — vul gerus later meer idees in (in die kode se WISHLIST-lys).</p>
   </div>
   <div class="wishlist" id="wishlist"></div>
+</section>
+
+<section id="storie">
+  <div class="section-head"><div class="eyebrow">Die tydlyn</div><h2>Ons storie tot dusver</h2></div>
+  <div id="timeline"></div>
+</section>
+
+<section id="kiekies">
+  <div class="section-head"><div class="eyebrow">Al die kiekies</div><h2>Kiekies</h2></div>
+  <div class="gallery" id="gallery-grid"></div>
 </section>
 
 <footer>gemaak met baie liefde, net vir ons twee</footer>
@@ -187,26 +187,26 @@ const STORY = [
 // FOTO'S — in volgorde soos opgelaai (geen datums in die metadata nie,
 // so wysig gerus die volgorde en byskrifte hieronder).
 const PHOTOS = [
-  { src: "images/foto01.jpg", caption: "Pizza-aand" },
-  { src: "images/foto02.jpg", caption: "Sonsondergang saam" },
-  { src: "images/foto03.jpg", caption: "By die muurskildery" },
-  { src: "images/foto04.jpg", caption: "Sonsondergang op die rots" },
-  { src: "images/foto05.jpg", caption: "Bokke-wedstryd" },
-  { src: "images/foto06.jpg", caption: "By die rivier" },
-  { src: "images/foto07.jpg", caption: "Onder die wolk" },
-  { src: "images/foto08.jpg", caption: "Deftige aand" },
-  { src: "images/foto09.jpg", caption: "Krieket by die stadion" },
-  { src: "images/foto10.jpg", caption: "V&A Waterfront" },
-  { src: "images/foto11.jpg", caption: "Familie kuier" },
-  { src: "images/foto12.jpg", caption: "Op die veld" },
-  { src: "images/foto13.jpg", caption: "By die lodge" },
-  { src: "images/foto14.jpg", caption: "Deftige dans" },
-  { src: "images/foto15.jpg", caption: "Uitstappie" },
-  { src: "images/foto16.jpg", caption: "Buitelug-avontuur" },
-  { src: "images/foto17.jpg", caption: "Die honde" },
-  { src: "images/foto18.jpg", caption: "By die akwarium" },
-  { src: "images/foto19.jpg", caption: "Swem in die rivier" },
-  { src: "images/foto20.jpg", caption: "Piekniek" },
+  { src: "foto01.jpg", caption: "Pizza-aand" },
+  { src: "foto02.jpg", caption: "Sonsondergang saam" },
+  { src: "foto03.jpg", caption: "By die muurskildery" },
+  { src: "foto04.jpg", caption: "Sonsondergang op die rots" },
+  { src: "foto05.jpg", caption: "Bokke-wedstryd" },
+  { src: "foto06.jpg", caption: "By die rivier" },
+  { src: "foto07.jpg", caption: "Onder die wolk" },
+  { src: "foto08.jpg", caption: "Deftige aand" },
+  { src: "foto09.jpg", caption: "Krieket by die stadion" },
+  { src: "foto10.jpg", caption: "V&A Waterfront" },
+  { src: "foto11.jpg", caption: "Familie kuier" },
+  { src: "foto12.jpg", caption: "Op die veld" },
+  { src: "foto13.jpg", caption: "By die lodge" },
+  { src: "foto14.jpg", caption: "Deftige dans" },
+  { src: "foto15.jpg", caption: "Uitstappie" },
+  { src: "foto16.jpg", caption: "Buitelug-avontuur" },
+  { src: "foto17.jpg", caption: "Die honde" },
+  { src: "foto18.jpg", caption: "By die akwarium" },
+  { src: "foto19.jpg", caption: "Swem in die rivier" },
+  { src: "foto20.jpg", caption: "Piekniek" },
 ];
 
 // WENSLYS / AFSPRAAK-IDEES — klein konsep, vul later meer in
