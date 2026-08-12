@@ -39,9 +39,9 @@
     border-bottom:1px solid var(--line);
     background-image:
       linear-gradient(180deg, rgba(51,48,42,.35) 0%, rgba(51,48,42,.55) 55%, rgba(51,48,42,.75) 100%),
-      url('foto03.jpg');
+      url('foto28.jpg');
     background-size:cover;
-    background-position:center 30%;
+    background-position:center 40%;
     color:#fff;
   }
   .hero .eyebrow{ color:#F4E9D8; }
@@ -109,6 +109,7 @@
   <div class="eyebrow" id="sedertLabel">Sedert —</div>
   <h1>Marinus <em>&amp;</em> Lané</h1>
   <div class="counter-row">
+    <div class="unit" id="unit-years" style="display:none"><span class="num" id="num-years">0</span><span class="label" id="label-years">Jaar</span></div>
     <div class="unit"><span class="num" id="num-days">0</span><span class="label">Dae</span></div>
     <div class="unit"><span class="num" id="num-hours">0</span><span class="label">Ure</span></div>
     <div class="unit"><span class="num" id="num-mins">0</span><span class="label">Minute</span></div>
@@ -207,6 +208,16 @@ const PHOTOS = [
   { src: "foto18.jpg", caption: "By die akwarium" },
   { src: "foto19.jpg", caption: "Swem in die rivier" },
   { src: "foto20.jpg", caption: "Piekniek" },
+  { src: "foto21.jpg", caption: "Mud run avontuur" },
+  { src: "foto22.jpg", caption: "Op kampus, lag saam" },
+  { src: "foto23.jpg", caption: "Bordspeletjies-aand" },
+  { src: "foto24.jpg", caption: "Familie foto" },
+  { src: "foto25.jpg", caption: "Opblaasboard by die dam" },
+  { src: "foto26.jpg", caption: "Op die wynplaas" },
+  { src: "foto27.jpg", caption: "Saam gehardloop" },
+  { src: "foto28.jpg", caption: "Sonsondergang by Tafelberg" },
+  { src: "foto29.jpg", caption: "Miniatuurgholf by die see" },
+  { src: "foto30.jpg", caption: "By die gedenkteken" },
 ];
 
 // WENSLYS / AFSPRAAK-IDEES — klein konsep, vul later meer in
@@ -232,7 +243,22 @@ document.getElementById('pw').addEventListener('keydown', e => { if(e.key === 'E
 
 function tick(){
   const now = new Date(); let diff = now - START_DATE; if(diff < 0) diff = 0;
-  document.getElementById('num-days').textContent = Math.floor(diff / 86400000);
+
+  const totalDays = Math.floor(diff / 86400000);
+  const years = Math.floor(totalDays / 365);
+  const days = totalDays % 365;
+
+  const yearsUnit = document.getElementById('unit-years');
+  if(years > 0){
+    yearsUnit.style.display = '';
+    document.getElementById('num-years').textContent = years;
+    document.getElementById('label-years').textContent = years === 1 ? 'Jaar' : 'Jaar';
+    document.getElementById('num-days').textContent = days;
+  } else {
+    yearsUnit.style.display = 'none';
+    document.getElementById('num-days').textContent = totalDays;
+  }
+
   document.getElementById('num-hours').textContent = Math.floor((diff % 86400000) / 3600000);
   document.getElementById('num-mins').textContent = Math.floor((diff % 3600000) / 60000);
   document.getElementById('num-secs').textContent = Math.floor((diff % 60000) / 1000);
